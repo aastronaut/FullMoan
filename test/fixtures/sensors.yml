@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: sensors
+#
+#  id            :integer          not null, primary key
+#  name          :string
+#  version       :decimal(, )
+#  power         :decimal(, )
+#  resolution    :decimal(, )
+#  maximum_range :decimal(, )
+#  vendor_id     :integer
+#  type_id       :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  version: 9.99
+  power: 9.99
+  resolution: 9.99
+  maximum_range: 9.99
+  vendor: one
+  type: one
+
+two:
+  name: MyString
+  version: 9.99
+  power: 9.99
+  resolution: 9.99
+  maximum_range: 9.99
+  vendor: two
+  type: two

@@ -1,0 +1,53 @@
+<%= form_for(sensor) do |f| %>
+  <% if sensor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sensor.errors.count, "error") %> prohibited this sensor from being saved:</h2>
+
+      <ul>
+      <% sensor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :version %>
+    <%= f.text_field :version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :power %>
+    <%= f.text_field :power %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resolution %>
+    <%= f.text_field :resolution %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maximum_range %>
+    <%= f.text_field :maximum_range %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vendor %>
+    <%= f.select :vendor_id, options_for_select(Vendor.all.collect{|v| [v.name, v.id]})  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.select :type_id, options_for_select(Type.all.collect{|v| [v.type_number, v.id]}) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
